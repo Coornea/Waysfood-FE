@@ -1,11 +1,11 @@
 import React from "react";
 
-import styles from "./Profile.module.css";
+import styles from "./ProfilePartner.module.css";
 
 import logo from "../../Assets/png/waysfood.png";
 import user1 from "../../Assets/user/user-1.jpg";
 
-export default function Profile() {
+export default function ProfilePartner() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -27,7 +27,7 @@ export default function Profile() {
           </div>
         </div>
         <div className={styles.sectionTwo}>
-          <h2 className={styles.title}>History Transaction</h2>
+          <h2 className={styles.title}>History Order</h2>
           <div className={styles.cardHistory}>
             <div>
               <label className={styles.label} htmlFor="restaurant">

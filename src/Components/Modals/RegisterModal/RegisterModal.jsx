@@ -4,12 +4,12 @@ import { Modal } from "react-bootstrap";
 
 import styles from "./RegisterModal.module.css";
 
-export default function LoginModal({ show, handleClose }) {
+export default function RegisterModal({ showReg, handleCloseReg }) {
   return (
     <div>
-      <Modal className="modal" show={show} onHide={handleClose}>
+      <Modal className="modal" show={showReg} onHide={handleCloseReg}>
         <form className={styles.formContainer}>
-          <h2 className={styles.formLabel}>Login</h2>
+          <h2 className={styles.formLabel}>Register</h2>
           <div>
             <input
               className={styles.formInput}
@@ -35,10 +35,10 @@ export default function LoginModal({ show, handleClose }) {
             />
           </div>
           <div>
-            <select name="" id="gender">
-              <option value="Select Gender">...</option>
-              <option value="Female"></option>
-              <option value="Male"></option>
+            <select className={styles.formInput} id="gender">
+              <option value="Select Gender">Gender</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
             </select>
           </div>
           <div>
@@ -50,10 +50,10 @@ export default function LoginModal({ show, handleClose }) {
             />
           </div>
           <div>
-            <select name="" id="status">
-              <option value="As User">...</option>
-              <option value="-"></option>
-              <option value="-"></option>
+            <select className={styles.formInput} id="status">
+              <option value="As User">As User</option>
+              <option value="Owner">Owner</option>
+              <option value="User">User</option>
             </select>
           </div>
           <div>
