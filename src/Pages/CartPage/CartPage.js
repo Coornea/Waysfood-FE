@@ -7,63 +7,60 @@ import paketGeprek from "../../Assets/paket-geprek.jpg";
 
 export default function CartPage() {
   return (
-    <div>
-      <h1>Restaurant Name</h1>
-      <form action="">
-        <div>
-          <label htmlFor="location">Delivery Location</label>
-          <div>
-            <input type="text" placeholder="Search Location" />
-            <button className={styles.btnSelectMap}>Select On Map</button>
+    <div className={styles.container}>
+      <form className={styles.formContainer}>
+        <h1 className={styles.restaurantName}>Restaurant Name</h1>
+        <label className={styles.label} htmlFor="location">
+          Delivery Location
+        </label>
+        <div className={styles.deliveryLocation}>
+          <input
+            className={styles.inputLocation}
+            type="text"
+            placeholder="Search Location"
+          />
+          <button className={styles.btnSelectMap}>Select On Map</button>
+        </div>
+        <label className={styles.label} htmlFor="review">
+          Review Your Order
+        </label>
+        <div className={styles.reviewOrder}>
+          <div className={styles.productInfo}>
+            <hr />
+            <div className={styles.productText}>
+              <img
+                className={styles.imgProduct}
+                src={paketGeprek}
+                alt="Paket Geprek"
+              />
+              <h5>Paket Geprek</h5>
+            </div>
+            <div className={styles.moreInfo}>
+              <p>Rp.15.000,-</p>
+              <img className={styles.bin} src={bin} alt="delete" />
+            </div>
           </div>
-          <label htmlFor="review">Review Your Order</label>
-          <div>
+          <div className={styles.bill}>
+            <hr />
             <div>
-              <hr />
-              <img src={paketGeprek} alt="Paket Geprek" />
-              <div>
-                <h3>Paket Geprek</h3>
-                <div></div>
-              </div>
-              <div>
-                <p>Rp.15.000,-</p>
-                <img src={bin} alt="delete" />
-              </div>
+              <label htmlFor="subtotal">Subtotal</label>
+              <p>Rp.15.000,-</p>
             </div>
             <div>
+              <label htmlFor="qty">QTY</label>
+              <p>2</p>
+            </div>
+            <div>
+              <label htmlFor="ongkir">Ongkir</label>
+              <p>Rp.10.000,-</p>
               <hr />
-              <div>
-                <label htmlFor="subtotal">Subtotal</label>
-                <input
-                  type="text"
-                  name="subtotal"
-                  id="subtotal"
-                  value="Rp.15.000,-"
-                />
-              </div>
-              <div>
-                <label htmlFor="qty">QTY</label>
-                <input type="text" name="qty" id="qty" value="2" />
-              </div>
-              <div>
-                <label htmlFor="ongkir">Ongkir</label>
-                <input
-                  type="text"
-                  name="ongkir"
-                  id="ongkir"
-                  value="Rp.10.000,-"
-                />
-                <hr />
-              </div>
-              <div>
-                <label htmlFor="total">Total</label>
-                <input
-                  type="text"
-                  name="total"
-                  id="total"
-                  value="Rp.40.000,-"
-                />
-              </div>
+            </div>
+            <div>
+              <label htmlFor="total">Total</label>
+              <p>Rp.40.000,-</p>
+            </div>
+            <div>
+              <button className={styles.btnOrder}>Order</button>
             </div>
           </div>
         </div>

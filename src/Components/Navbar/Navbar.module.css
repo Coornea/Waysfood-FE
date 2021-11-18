@@ -6,20 +6,20 @@
 }
 
 .wrap {
-  right: 2rem;
+  right: 3rem;
   position: absolute;
 }
 
 .logo {
   margin-top: 26px;
-  margin-left: 65px;
+  margin-left: 55px;
   width: auto;
   height: 40px;
   position: absolute;
 }
 
 .btnLogin {
-  margin-top: 20px;
+  margin-top: 26px;
   margin-left: 15px;
   background-color: #433434;
   color: white;
@@ -32,7 +32,7 @@
 }
 
 .btnRegister {
-  margin-top: 20px;
+  margin-top: 26px;
   margin-left: 15px;
   background-color: #433434;
   color: white;

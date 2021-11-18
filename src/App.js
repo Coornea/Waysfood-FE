@@ -22,6 +22,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomePages />} />
           <Route exact path="/restaurant" element={<RestaurantMenu />} />
+          <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/cartpage" element={<CartPage />} />
         </Routes>
       </Router>
       {/* <Footer /> */}
