@@ -47,4 +47,5 @@
 .formTextBold {
   color: #b1b1b1;
   font-weight: 800;
+  cursor: pointer;
 }

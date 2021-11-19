@@ -1,7 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Style.css";
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Navigate,
+} from "react-router-dom";
 import PrivateRoute from "./Components/Routes/PrivateRoute";
 
 import Navbar from "./Components/Navbar/Navbar";
@@ -41,6 +47,7 @@ function App() {
           <Route exact path="/addproduct" element={<AddProduct />} />
           <Route exact path="/income" element={<IncomeTransaction />} />
           <Route exact path="/404" element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
       {/* <Footer /> */}
