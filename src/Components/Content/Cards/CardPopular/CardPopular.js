@@ -1,9 +1,10 @@
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import styles from "./CardPopular.module.css";
 
-import starbucks from "../../../Assets/png/starbucks.png";
-import burgerking from "../../../Assets/png/burgerking.png";
-import kfc from "../../../Assets/png/kfc.png";
-import jco from "../../../Assets/png/j.co.png";
+import starbucks from "../../../../Assets/png/starbucks.png";
+import burgerking from "../../../../Assets/png/burgerking.png";
+import kfc from "../../../../Assets/png/kfc.png";
+import jco from "../../../../Assets/png/j.co.png";
 
 export default function CardPopular() {
   return (

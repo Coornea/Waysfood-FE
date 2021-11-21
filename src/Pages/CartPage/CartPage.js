@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styles from "./CartPage.module.css";
+import MapsModal from "../../Components/Modals/MapsPopUp/MapsPopUp";
 
 import bin from "../../Assets/png/bin.png";
 import paketGeprek from "../../Assets/paket-geprek.jpg";
 
 export default function CartPage() {
+  const [Maps, setMaps] = useState(false);
+  const handleShowMaps = () => {
+    setMaps(true);
+  };
+
   return (
     <div className={styles.container}>
       <form className={styles.formContainer}>
@@ -19,7 +25,10 @@ export default function CartPage() {
             type="text"
             placeholder="Search Location"
           />
-          <button className={styles.btnSelectMap}>Select On Map</button>
+          <MapsModal showMaps={Maps} handleCloseMaps={() => setMaps(false)} />
+          <button onClick={handleShowMaps} className={styles.btnSelectMap}>
+            Select On Map
+          </button>
         </div>
         <label className={styles.label} htmlFor="review">
           Review Your Order

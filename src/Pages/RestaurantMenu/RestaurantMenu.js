@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./RestaurantMenu.module.css";
-import CardMenu from "../../Components/Content/Cards/CardMenu";
+import CardMenu from "../../Components/Content/Cards/CardMenu/CardMenu";
 
 export default function RestaurantMenu() {
   return (

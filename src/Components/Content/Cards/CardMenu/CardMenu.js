@@ -1,9 +1,9 @@
 import styles from "./CardMenu.module.css";
 
-import paketGeprek from "../../../Assets/paket-geprek.jpg";
-import nasiGorengRony from "../../../Assets/nasi-goreng-mas-rony.jpg";
-import pecelAyam from "../../../Assets/pecel-ayam-prambanan.jpg";
-import kopiKenangan from "../../../Assets/kopi-kenangan.jpg";
+import paketGeprek from "../../../../Assets/paket-geprek.jpg";
+import nasiGorengRony from "../../../../Assets/nasi-goreng-mas-rony.jpg";
+import pecelAyam from "../../../../Assets/pecel-ayam-prambanan.jpg";
+import kopiKenangan from "../../../../Assets/kopi-kenangan.jpg";
 
 export default function CardMenu() {
   return (

@@ -26,6 +26,8 @@ import AddProduct from "./Pages/AddProduct/AddProduct";
 import IncomeTransaction from "./Pages/IncomeTransaction/IncomeTransaction";
 import NotFound from "./Pages/NotFound/NotFound";
 
+import Map from "./Components/Modals/MapsPopUp/MapsPopUp";
+
 function App() {
   return (
     <>
@@ -48,6 +50,8 @@ function App() {
           <Route exact path="/income" element={<IncomeTransaction />} />
           <Route exact path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/" />} />
+
+          <Route exact path="/map" element={<Map />} />
         </Routes>
       </Router>
       {/* <Footer /> */}

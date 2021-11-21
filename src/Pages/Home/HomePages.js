@@ -2,12 +2,12 @@ import { useNavigate } from "react-router-dom";
 
 import Jumbotron from "../../Components/Jumbotron/Jumbotron";
 import Footer from "../../Components/Footer/Footer";
-import CardPopular from "../../Components/Content/Cards/CardPopular";
-import CardRecommend from "../../Components/Content/Cards/CardRecommend";
+import CardPopular from "../../Components/Content/Cards/CardPopular/CardPopular";
+import CardRecommend from "../../Components/Content/Cards/CardRecommend/CardRecommend";
 
 import styles from "./Home.module.css";
 function HomePages() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className={styles.container}>
@@ -22,7 +22,7 @@ function HomePages() {
           <CardRecommend />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
