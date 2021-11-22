@@ -32,14 +32,27 @@ h2 {
   justify-content: space-between;
 }
 
-.btnAttach[type="file"] {
+.btnAttach {
   width: 300px;
   height: 50px;
   border: 2px solid #766c6c;
   border-radius: 5px;
-  z-index: -1;
+  padding: 10px;
+  /* z-index: -1; */
   top: 10px;
   left: 8px;
+  /* position: relative; */
+}
+
+.labelAttach {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.imgPin {
+  width: auto;
+  height: 30px;
 }
 
 .sectionTwo {

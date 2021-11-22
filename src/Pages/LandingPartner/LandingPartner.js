@@ -36,7 +36,7 @@ export default function LandingPartner() {
               src={income}
               alt="Income Transaction"
             />
-            <a href="/">
+            <a href="/profilepartner">
               <button className={styles.btnCard}>Profile</button>
             </a>
           </div>
@@ -46,7 +46,7 @@ export default function LandingPartner() {
               src={income}
               alt="Income Transaction"
             />
-            <a href="/">
+            <a href="/addproduct">
               <button className={styles.btnCard}>Add Product</button>
             </a>
           </div>

@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./ProfilePartner.module.css";
 
 import logo from "../../Assets/png/waysfood.png";
-import user1 from "../../Assets/user/user-1.jpg";
+import partner1 from "../../Assets/paket-sambel-matah.jpg";
 
 export default function ProfilePartner() {
   return (
@@ -13,7 +13,12 @@ export default function ProfilePartner() {
           <h2 className={styles.title}>My Profile</h2>
           <div className={styles.profileContainer}>
             <div className={styles.profileView}>
-              <img className={styles.profileImage} src={user1} alt="User" />
+              <img
+                style={{ height: "200px" }}
+                className={styles.profileImage}
+                src={partner1}
+                alt="User"
+              />
               <button className={styles.btnEdit}>Edit Profile</button>
             </div>
             <div className={styles.profileInfo}>

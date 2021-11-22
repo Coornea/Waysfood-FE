@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 // import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../Contex/UserContex";
 
-import logo from "../../Assets/png/waysfood.png";
 import styles from "./Navbar.module.css";
+import logo from "../../Assets/png/waysfood.png";
+import user1 from "../../Assets/user/user-1.jpg";
+import cart from "../../Assets/png/cart.png";
 
 import RegisterModal from "../Modals/RegisterModal/RegisterModal";
 import LoginModal from "../Modals/LoginModal/LoginModal";
@@ -19,9 +22,11 @@ function Navbar() {
     setRegister(true);
   };
 
-  // let navigate = useNavigate();
+  const [state, dispatch] = useContext(AppContext);
 
-  // const handleClick = () => {
+  // const navigate = useNavigate();
+
+  // const goHome = () => {
   //   navigate("/");
   // };
 
@@ -29,7 +34,7 @@ function Navbar() {
     <div className={styles.navbar}>
       <a href="/">
         <img
-          // onClick={handleClick}
+          // onClick={}
           className={styles.logo}
           src={logo}
           alt="waysfood-icon"
@@ -42,12 +47,18 @@ function Navbar() {
       />
       <LoginModal show={Login} handleClose={() => setLogin(false)} />
       <div className={styles.wrap}>
-        <button onClick={handleShowReg} className={styles.btnRegister}>
-          Register
-        </button>
-        <button onClick={handleShow} className={styles.btnLogin}>
-          Login
-        </button>
+        {state.isLogin ? (
+          <p>TRUE</p>
+        ) : (
+          <>
+            <button onClick={handleShowReg} className={styles.btnRegister}>
+              Register
+            </button>
+            <button onClick={handleShow} className={styles.btnLogin}>
+              Login
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

@@ -15,12 +15,11 @@ export default function EditProfile() {
               type="text"
               placeholder="Title"
             />
-            <div style={{ position: "relative" }}>
-              <input
-                className={styles.btnAttach}
-                type="file"
-                placeholder={(`Attach Image`, (<img src={pin} />))}
-              />
+            <div className={styles.btnAttach}>
+              <label className={styles.labelAttach} htmlFor="attachImage">
+                <p>Attach Image</p> <img className={styles.imgPin} src={pin} />
+              </label>
+              <input hidden type="file" id="attachImage" />
             </div>
           </div>
           <input

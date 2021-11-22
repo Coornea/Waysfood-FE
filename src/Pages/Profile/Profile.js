@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./Profile.module.css";
 
@@ -6,6 +7,11 @@ import logo from "../../Assets/png/waysfood.png";
 import user1 from "../../Assets/user/user-1.jpg";
 
 export default function Profile() {
+  const navigate = useNavigate();
+  const goEdit = () => {
+    navigate("/editprofile");
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -14,7 +20,9 @@ export default function Profile() {
           <div className={styles.profileContainer}>
             <div className={styles.profileView}>
               <img className={styles.profileImage} src={user1} alt="User" />
-              <button className={styles.btnEdit}>Edit Profile</button>
+              <button onClick={goEdit} className={styles.btnEdit}>
+                Edit Profile
+              </button>
             </div>
             <div className={styles.profileInfo}>
               <label htmlFor="fullname">Full Name</label>

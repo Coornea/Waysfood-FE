@@ -6,9 +6,9 @@ import MyLocation from "../../Content/Cards/MyLocation/MyLocation";
 
 import { Modal } from "react-bootstrap";
 
-export default function MapsPopUp(show, handleClose) {
+export default function MapsPopUp({ show, handleClose }) {
   return (
-    <div>
+    <>
       <Modal size="xl" className="modal" show={show} onHide={handleClose}>
         <Map />
         <div style={{ zIndex: "1", marginTop: "-230px" }}>
@@ -16,6 +16,6 @@ export default function MapsPopUp(show, handleClose) {
         </div>
         {/* <div className={styles.content}></div> */}
       </Modal>
-    </div>
+    </>
   );
 }

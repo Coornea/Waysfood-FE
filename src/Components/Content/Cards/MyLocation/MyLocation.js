@@ -7,7 +7,7 @@ export default function MyLocation() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h4 className={styles.contentTitle}>Select delivery location</h4>
+        <h4 className={styles.contentTitle}>Select my location</h4>
         <div className={styles.contentInfo}>
           <img
             className={styles.locationIcon}

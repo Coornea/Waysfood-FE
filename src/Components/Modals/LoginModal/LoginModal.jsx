@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
+import { AppContext } from "../../../Contex/UserContex";
 
 import { Modal } from "react-bootstrap";
 
@@ -6,14 +8,20 @@ import styles from "./LoginModal.module.css";
 
 function LoginModal({ show, handleClose, reg }) {
   // const {handleClose, show} = props;
+  const [state, dispatch] = useContext(AppContext);
 
-  const dataUser = JSON.parse(localStorage.getItem("dataUser"));
+  const dataUser = JSON.parse(localStorage.getItem("User"));
 
-  const [data, setData] = useState({
-    isLogin: false,
+  // const [form, setData] = useState({
+  //   isLogin: false,
+  //   email: "",
+  //   password: "",
+  //   status: "",
+  // });
+
+  const [form, setForm] = useState({
     email: "",
     password: "",
-    status: "",
   });
 
   const toSwitch = () => {
@@ -23,24 +31,22 @@ function LoginModal({ show, handleClose, reg }) {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    dataUser.map((element) => {
-      if (data.email === element.email && data.password === element.password) {
-        localStorage.setItem("login", "true");
-        localStorage.setItem("dataLogin", JSON.stringify(element));
-        // props.setData(data);
-        setData(data);
-        handleClose();
-      } else {
-        console.log("Failed!");
-      }
-    });
+    const data = dataUser.find(
+      (item) => item.email === form.email && item.password === form.password
+    );
+    // console.log(data);
+    if (data) {
+      dispatch({
+        type: "LOGIN_SUCCESS",
+        payload: data,
+      });
+    }
   };
 
   const handleChange = (e) => {
-    e.preventDefault();
-    setData({
-      ...data,
-      isLogin: true,
+    // e.preventDefault();
+    setForm({
+      ...form,
       [e.target.name]: e.target.value,
     });
   };
@@ -52,8 +58,9 @@ function LoginModal({ show, handleClose, reg }) {
           <h2 className={styles.formLabel}>Login</h2>
           <div>
             <input
-              onChange={(e) => handleChange(e)}
+              onChange={handleChange}
               className={styles.formInput}
+              name="email"
               type="email"
               id="email"
               placeholder="Email"
@@ -61,7 +68,8 @@ function LoginModal({ show, handleClose, reg }) {
           </div>
           <div>
             <input
-              onChange={(e) => handleChange(e)}
+              onChange={handleChange}
+              name="password"
               type="password"
               className={styles.formInput}
               id="password"

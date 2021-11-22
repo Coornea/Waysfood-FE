@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import styles from "./CartPage.module.css";
-import MapsModal from "../../Components/Modals/MapsPopUp/MapsPopUp";
+import MapsPopUp from "../../Components/Modals/MapsPopUp/MapsPopUp";
 
 import bin from "../../Assets/png/bin.png";
 import paketGeprek from "../../Assets/paket-geprek.jpg";
+import map from "../../Assets/png/map.png";
 
 export default function CartPage() {
   const [Maps, setMaps] = useState(false);
-  const handleShowMaps = () => {
+  const handleShowMaps = (e) => {
+    e.preventDefault();
     setMaps(true);
   };
 
@@ -25,9 +27,10 @@ export default function CartPage() {
             type="text"
             placeholder="Search Location"
           />
-          <MapsModal showMaps={Maps} handleCloseMaps={() => setMaps(false)} />
+          <MapsPopUp show={Maps} handleClose={() => setMaps(false)} />
           <button onClick={handleShowMaps} className={styles.btnSelectMap}>
             Select On Map
+            <img style={{ marginLeft: "15px" }} src={map} alt="map" />
           </button>
         </div>
         <label className={styles.label} htmlFor="review">

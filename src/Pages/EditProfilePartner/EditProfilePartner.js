@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+
+import MapsPopUp from "../../Components/Modals/MapsPopUp/MapsPopUp";
 
 import styles from "./EditProfilePartner.module.css";
 import pin from "../../Assets/png/pin.png";
 import map from "../../Assets/png/map.png";
 
 export default function EditProfilePartner() {
+  const [Maps, setMaps] = useState(false);
+  const handleShowMaps = (e) => {
+    e.preventDefault();
+    setMaps(true);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -16,12 +24,11 @@ export default function EditProfilePartner() {
               type="text"
               placeholder="Name Partner"
             />
-            <div style={{ position: "relative" }}>
-              <input
-                className={styles.btnAttach}
-                type="file"
-                placeholder={(`Attach Image`, (<img src={pin} />))}
-              />
+            <div className={styles.btnAttach}>
+              <label className={styles.labelAttach} htmlFor="attachImage">
+                <p>Attach Image</p> <img className={styles.imgPin} src={pin} />
+              </label>
+              <input hidden type="file" id="attachImage" />
             </div>
           </div>
           <input
@@ -37,8 +44,9 @@ export default function EditProfilePartner() {
               type="text"
               placeholder="Location"
             />
-            <button className={styles.btnSelectMap}>
-              Select On Map{" "}
+            <MapsPopUp show={Maps} handleClose={() => setMaps(false)} />
+            <button onClick={handleShowMaps} className={styles.btnSelectMap}>
+              Select On Map
               <img style={{ marginLeft: "15px" }} src={map} alt="map" />
             </button>
           </div>

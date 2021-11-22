@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import MapsPopUp from "../../Components/Modals/MapsPopUp/MapsPopUp";
 
 import styles from "./EditProfile.module.css";
 import pin from "../../Assets/png/pin.png";
 import map from "../../Assets/png/map.png";
 
 export default function EditProfile() {
+  const [Maps, setMaps] = useState(false);
+  const handleShowMaps = (e) => {
+    e.preventDefault();
+    setMaps(true);
+  };
+
+  const navigate = useNavigate();
+  const onClicked = () => {
+    navigate("/profile");
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -16,12 +30,11 @@ export default function EditProfile() {
               type="text"
               placeholder="Full Name"
             />
-            <div style={{ position: "relative" }}>
-              <input
-                className={styles.btnAttach}
-                type="file"
-                placeholder={(`Attach Image`, (<img src={pin} />))}
-              />
+            <div className={styles.btnAttach}>
+              <label className={styles.labelAttach} htmlFor="attachImage">
+                <p>Attach Image</p> <img className={styles.imgPin} src={pin} />
+              </label>
+              <input hidden type="file" id="attachImage" />
             </div>
           </div>
           <input
@@ -37,13 +50,16 @@ export default function EditProfile() {
               type="text"
               placeholder="Location"
             />
-            <button className={styles.btnSelectMap}>
-              Select On Map{" "}
+            <MapsPopUp show={Maps} handleClose={() => setMaps(false)} />
+            <button onClick={handleShowMaps} className={styles.btnSelectMap}>
+              Select On Map
               <img style={{ marginLeft: "15px" }} src={map} alt="map" />
             </button>
           </div>
           <div className={styles.btnWrap}>
-            <button className={styles.btnSave}>Save</button>
+            <button onClick={onClicked} className={styles.btnSave}>
+              Save
+            </button>
           </div>
         </form>
       </div>
